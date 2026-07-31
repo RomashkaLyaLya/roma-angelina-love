@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>Ангелина &amp; Рома — Пол года любви</title>
+<meta name="description" content="Открытка на пол года отношений от Ромы для Ангелины">
+<meta property="og:title" content="Ангелина 💕 Рома">
+<meta property="og:description" content="Открытка на пол года отношений, полных любви">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2226%22 font-size=%2226%22>💗</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hearts-bg" id="heartsBg" aria-hidden="true"></div>
+
+<div class="progress-dots" id="progressDots" aria-hidden="true"></div>
+
+<main class="stage" id="stage">
+
+  <!-- SCENE 0 — COVER -->
+  <section class="scene active" data-scene="0">
+    <div class="scene-inner cover">
+      <div class="cover-sparkle">✨</div>
+      <p class="eyebrow">для Ангелины, с любовью</p>
+      <h1 class="names"><span>Ангелина</span><span class="heart-icon">💗</span><span>Рома</span></h1>
+      <p class="cover-sub">У меня для тебя кое-что есть.<br>Готова?</p>
+      <button class="btn btn-primary pulse" data-next>Открыть 💌</button>
+    </div>
+  </section>
+
+  <!-- SCENE 1 — LOVE METER -->
+  <section class="scene" data-scene="1">
+    <div class="scene-inner">
+      <div class="mascot" id="mascotFace">🥺</div>
+      <h2 id="meterQuestion">Насколько сильно ты меня любишь?</h2>
+      <p class="meter-percent" id="meterPercent">0%</p>
+      <div class="meter-wrap">
+        <input type="range" min="0" max="100" value="0" id="loveSlider" class="love-slider" aria-label="Насколько сильно ты меня любишь">
+        <div class="meter-track-label">
+          <span>love</span>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="meterNext" disabled data-next>Далее →</button>
+    </div>
+  </section>
+
+  <!-- SCENE 2 — GIFT -->
+  <section class="scene" data-scene="2">
+    <div class="scene-inner">
+      <h2>Тест на любовь пройден! 🎉</h2>
+      <p class="sub">Тебя ждёт сюрприз. Открой подарок:</p>
+      <button class="gift-box" id="giftBox" aria-label="Открыть подарок">
+        <span class="gift-emoji">🎁</span>
+      </button>
+      <p class="hint" id="giftHint">нажми на подарок</p>
+    </div>
+  </section>
+
+  <!-- SCENE 3 — COUNTER -->
+  <section class="scene" data-scene="3">
+    <div class="scene-inner">
+      <p class="eyebrow">мы вместе уже</p>
+      <div class="big-number" id="dayCount">181</div>
+      <p class="big-number-label">день, целых полгода 💕</p>
+      <div class="timer-grid" id="liveTimer">
+        <div class="timer-cell"><span id="tDays">000</span><small>дней</small></div>
+        <div class="timer-cell"><span id="tHours">00</span><small>часов</small></div>
+        <div class="timer-cell"><span id="tMins">00</span><small>минут</small></div>
+        <div class="timer-cell"><span id="tSecs">00</span><small>секунд</small></div>
+      </div>
+      <p class="sub small">и с каждой секундой всё крепче ♥</p>
+      <button class="btn btn-primary" data-next>Далее →</button>
+    </div>
+  </section>
+
+  <!-- SCENE 4 — BOUQUET / NOTES -->
+  <section class="scene" data-scene="4">
+    <div class="scene-inner wide">
+      <h2>Выбери букет</h2>
+      <p class="sub">в каждом спрятано признание — можно открыть сколько угодно</p>
+      <div class="bouquet-grid" id="bouquetGrid"></div>
+      <button class="btn btn-primary" id="bouquetNext" disabled data-next>Далее →</button>
+    </div>
+  </section>
+
+  <!-- BOUQUET MESSAGE OVERLAY -->
+  <div class="overlay" id="bouquetOverlay" aria-hidden="true">
+    <div class="overlay-card">
+      <div class="overlay-svg" id="overlaySvg"></div>
+      <p class="overlay-message" id="overlayMessage"></p>
+      <button class="btn btn-ghost" id="overlayClose">Выбрать другой букет</button>
+    </div>
+  </div>
+
+  <!-- SCENE 5 — MEMORY VIDEO -->
+  <section class="scene" data-scene="5">
+    <div class="scene-inner">
+      <p class="eyebrow">а помнишь?</p>
+      <h2 class="memory-title">Ой, а это же мы <span class="tilt">:3</span></h2>
+      <div class="memory-frame">
+        <video class="memory-video" id="memoryVideo" src="assets/us.mp4" autoplay muted loop playsinline></video>
+        <span class="memory-sparkle memory-sparkle-1">✨</span>
+        <span class="memory-sparkle memory-sparkle-2">💗</span>
+        <button class="mute-toggle" id="muteToggle" aria-label="Включить звук">🔇</button>
+      </div>
+      <p class="sub small">маленький момент, который хочется пересматривать снова и снова</p>
+      <button class="btn btn-primary" data-next>Далее →</button>
+    </div>
+  </section>
+
+  <!-- SCENE 6 — LETTER -->
+  <section class="scene" data-scene="6">
+    <div class="scene-inner">
+      <h2 class="letter-title">Письмо от сердца 💌</h2>
+      <div class="letter-paper">
+        <p>Моя Ангелина,</p>
+        <p>сегодня ровно полгода, как мы вместе — и мне кажется, что за это время я успел полюбить тебя тысячей разных способов: за твою улыбку по утрам, за смех, который слышно из другой комнаты, за то, как ты умеешь превращать самый обычный день в особенный.</p>
+        <p>Спасибо, что ты рядом. Спасибо за терпение, за тепло, за то, что с тобой легко быть настоящим. Эти 181 день пролетели быстро, но каждый из них я помню — потому что в каждом была ты.</p>
+        <p>Пусть это будет только начало. Хочу пройти с тобой ещё очень, очень много таких дней.</p>
+        <p class="signature">Твой Рома 💛<br><span class="date">31 июля 2026</span></p>
+      </div>
+      <button class="btn btn-primary" data-next>Далее →</button>
+    </div>
+  </section>
+
+  <!-- SCENE 7 — FINALE -->
+  <section class="scene" data-scene="7">
+    <div class="scene-inner finale">
+      <div class="confetti-emoji">🎊</div>
+      <h1 class="finale-title">С половиной года,<br>любовь моя!</h1>
+      <p class="finale-names">Ангелина <span class="heart-icon">💗</span> Рома</p>
+      <p class="sub">P.S. впереди у нас ещё очень много таких дней ♥</p>
+      <button class="btn btn-ghost" id="replayBtn">Пройти ещё раз 🔁</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
